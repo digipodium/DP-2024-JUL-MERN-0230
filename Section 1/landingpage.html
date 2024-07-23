@@ -114,19 +114,37 @@
         footer{
             padding: 50px 100px;
             background-color: #ddd;
-
             display: grid;
-            grid-template-columns: 3fr 1fr 1fr 1fr;
+            grid-template-columns: 3fr 2fr 2fr 2fr;
+            gap: 30px;
         }
 
         .copy-info{
             font-weight: bold;
         }
+
+        .footer-links a{
+            color: black;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .top-btn{
+            position: fixed;
+            z-index: 2;
+            right: 50px;
+            bottom: 50px;
+        }
+
     </style>
 
 </head>
 
 <body>
+
+    <button class="top-btn">Move To Top</button>
+
     <main>
         <article>
             <section class="hero-section">
@@ -233,8 +251,36 @@
                 <a href="">Link 4</a>
             </div>
         </div>
+        <div>
+            <h3>Important Links</h3>
+            <div class="footer-links">
+                <a href="">Link 1</a>
+                <a href="">Link 2</a>
+                <a href="">Link 3</a>
+                <a href="">Link 4</a>
+            </div>
+        </div>
+        <div>
+            <h3>Important Links</h3>
+            <div class="footer-links">
+                <a href="">Link 1</a>
+                <a href="">Link 2</a>
+                <a href="">Link 3</a>
+                <a href="">Link 4</a>
+            </div>
+        </div>
 
     </footer>
+
+    <script>
+        document.querySelector('.top-btn')
+        .addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        })
+    </script>
 
 </body>
 
