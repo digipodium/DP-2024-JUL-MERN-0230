@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
 
-    <div class="grid grid-cols-12 max-w-[80%] mx-auto">
+    <div class="grid grid-cols-12 max-w-[80%] mx-auto h-screen md:h-[60vh]">
         <div class="col-span-12 md:col-span-8 my-auto order-last md:order-first text-center md:text-left">
             <h1 class="text-5xl font-bold">Website Title</h1>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet voluptates sit aspernatur nesciunt ullam
@@ -21,8 +26,8 @@
             </div>
 
         </div>
-        <div class="col-span-12 md:col-span-4">
-            <img class="w-full" src="https://5.imimg.com/data5/VW/WV/MY-61397565/headphone-blue_1.jpg" alt="">
+        <div class="col-span-12 md:col-span-4 my-auto ">
+            <img class="w-full block" src="https://5.imimg.com/data5/VW/WV/MY-61397565/headphone-blue_1.jpg" alt="">
         </div>
     </div>
 
@@ -30,7 +35,8 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 max-w-[90%] mx-auto">
 
         <div class="border-2 shadow rounded-md">
-            <img class="w-full" src="https://5.imimg.com/data5/VW/WV/MY-61397565/headphone-blue_1.jpg" alt="">
+            <img class="w-full h-80 object-contain"
+                src="https://5.imimg.com/data5/VW/WV/MY-61397565/headphone-blue_1.jpg" alt="">
             <div class="p-4">
                 <p class="border text-lg text-gray-500 rounded-full w-fit px-4">Wireless</p>
                 <h3 class="text-3xl font-bold">Heaphones</h3>
@@ -43,7 +49,9 @@
             </div>
         </div>
         <div class="border-2 shadow rounded-md">
-            <img class="w-full" src="https://5.imimg.com/data5/VW/WV/MY-61397565/headphone-blue_1.jpg" alt="">
+            <img class="w-full h-80 object-contain"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi8MOzRe8Oo5S3aasAbK-qwmxxpH96dJTIb9mlobQL1DgEe_mgLYmpjtqXY6Ki7P_uAiw&usqp=CAU"
+                alt="">
             <div class="p-4">
                 <p class="border text-lg text-gray-500 rounded-full w-fit px-4">Wireless</p>
                 <h3 class="text-3xl font-bold">Heaphones</h3>
@@ -56,7 +64,8 @@
             </div>
         </div>
         <div class="border-2 shadow rounded-md">
-            <img class="w-full" src="https://5.imimg.com/data5/VW/WV/MY-61397565/headphone-blue_1.jpg" alt="">
+            <img class="w-full h-80 object-contain"
+                src="https://5.imimg.com/data5/VW/WV/MY-61397565/headphone-blue_1.jpg" alt="">
             <div class="p-4">
                 <p class="border text-lg text-gray-500 rounded-full w-fit px-4">Wireless</p>
                 <h3 class="text-3xl font-bold">Heaphones</h3>
@@ -69,7 +78,8 @@
             </div>
         </div>
         <div class="border-2 shadow rounded-md">
-            <img class="w-full" src="https://5.imimg.com/data5/VW/WV/MY-61397565/headphone-blue_1.jpg" alt="">
+            <img class="w-full h-80 object-contain"
+                src="https://5.imimg.com/data5/VW/WV/MY-61397565/headphone-blue_1.jpg" alt="">
             <div class="p-4">
                 <p class="border text-lg text-gray-500 rounded-full w-fit px-4">Wireless</p>
                 <h3 class="text-3xl font-bold">Heaphones</h3>
@@ -83,6 +93,34 @@
         </div>
 
     </div>
+
+    <footer class="grid grid-cols-12 gap-6 py-6 px-6 md:px-28 mx-auto bg-gray-300 mt-10">
+
+        <div class="col-span-12 md:col-span-6">
+            <h2 class="text-xl md:text-3xl font-bold">Website Title</h2>
+            <p class="text-lg">&copy; 2024, All Rights Reserved</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis dolor expedita eaque vel, sed quibusdam
+                perferendis quisquam fugit recusandae inventore odit cupiditate eius assumenda. Tempore excepturi fuga
+                non necessitatibus quasi!</p>
+        </div>
+
+        <div class="col-span-6 md:col-span-3">
+            <p class="text-lg font-bold">Important Links</p>
+            <a href="" class="block w-fit hover:text-blue-700">Link 1</a>
+            <a href="" class="block hover:text-blue-700">Link 2</a>
+            <a href="" class="block hover:text-blue-700">Link 3</a>
+            <a href="" class="block hover:text-blue-700">Link 4</a>
+        </div>
+
+        <div class="col-span-6 md:col-span-3">
+            <p class="text-lg font-bold">Social Links</p>
+            <a href="" class="block hover:text-blue-700"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            <a href="" class="block hover:text-blue-700"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="" class="block hover:text-blue-700"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="" class="block hover:text-blue-700"> <i class="fa-brands fa-github"></i> Github</a>
+        </div>
+
+    </footer>
 
 </body>
 
