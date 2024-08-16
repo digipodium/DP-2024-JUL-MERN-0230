@@ -14,6 +14,10 @@ const Home = () => {
       </button>
 
       <Input />
+      <Input />
+      <Input />
+      <Input />
+      <Input />
 
     </div>
   )
