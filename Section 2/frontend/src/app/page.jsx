@@ -1,3 +1,4 @@
+
 import Input from '@/components/Input';
 import React from 'react'
 
@@ -13,11 +14,9 @@ const Home = () => {
         Submit
       </button>
 
-      <Input />
-      <Input />
-      <Input />
-      <Input />
-      <Input />
+      <Input id={'name'} label={'Full Name'} />
+      <Input id={'email'} label={'Email Address'} type={'email'} />
+      <Input id={'dob'} label={'Date of Birth'} type={'date'} />
 
     </div>
   )

@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Input = () => {
+const Input = ({ label, id, type="text" }) => {
     return (
         <div>
-            <label htmlFor="">Name</label>
-            <input type="text" className='block px-3 py-1 w-full border' />
+            <label htmlFor={id}>{label}</label>
+            <input type={type} id={id} className='block px-3 py-1 w-full border' />
         </div>
     )
 }
