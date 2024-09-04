@@ -12,9 +12,13 @@ router.post('/add', (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.status(500).json(err);
+            if(err.code === 11000){
+                res.status(500).json({ message : 'Email Already Exists' });
+            }else{
+                res.status(500).json({ message : 'Internal Server Error' });
+            }
         });
-})
+});
 
 // getall
 router.get('/getall', (req, res) => {

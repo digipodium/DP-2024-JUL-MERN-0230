@@ -1,6 +1,8 @@
 'use client';
+import axios from 'axios';
 import { useFormik } from 'formik';
 import React from 'react'
+import toast from 'react-hot-toast';
 
 const Signup = () => {
 
@@ -12,7 +14,14 @@ const Signup = () => {
     },
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-
+      
+      axios.post('http://localhost:5000/user/add', values)
+      .then((result) => {
+        toast.success('User created successfully');
+      }).catch((err) => {
+        console.log(err);
+        toast.error(err?.response?.data?.message || 'Something went wrong');
+      });
       resetForm();
     }
   })
