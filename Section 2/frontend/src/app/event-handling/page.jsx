@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 
 const EventHandling = () => {
 
-    const ref = useRef(null);
+    const boxRef = useRef(null);
 
     const previewImage = (e) => {
         const file = e.target.files[0];
@@ -20,12 +20,12 @@ const EventHandling = () => {
     return (
         <div className='max-w-2xl mx-auto h-screen' onMouseMove={(e) => {
             // console.log(e.clientX, e.clientY);
-            ref.current.style.left = e.clientX - 40 + 'px';
-            ref.current.style.top = e.clientY - 40 + 'px';
+            boxRef.current.style.left = e.clientX - 40 + 'px';
+            boxRef.current.style.top = e.clientY - 40 + 'px';
         }}>
             <div
                 className='size-20 bg-yellow-200 rounded-full absolute duration-500'
-                ref={ref}
+                ref={boxRef}
             ></div>
             <h1 className='text-center font-bold text-4xl'>Event Handling</h1>
             <button className='border bg-gray-800 text-white rounded p-2'

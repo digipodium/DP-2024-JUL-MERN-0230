@@ -1,6 +1,7 @@
 'use client';
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast';
 
 const ManageUser = () => {
 
@@ -16,6 +17,17 @@ const ManageUser = () => {
         fetchUsers();
     }, []);
 
+    const deleteUser = (id) => {
+        axios.delete('http://localhost:5000/user/delete/' + id)
+            .then((result) => {
+                fetchUsers();
+                toast.success('User deleted successfully');
+            }).catch((err) => {
+                console.log(err);
+                toast.error('Something went wrong');
+            });
+    }
+
     const displayUsers = () => {
         if (userList.length === 0) {
             return <p>Loading...</p>
@@ -27,6 +39,7 @@ const ManageUser = () => {
                         <th className='p-2'>Name</th>
                         <th className='p-2'>Email</th>
                         <th className='p-2'>City</th>
+                        <th colSpan={2}></th>
                     </tr>
                 </thead>
                 <tbody className='bg-blue-200'>
@@ -37,6 +50,16 @@ const ManageUser = () => {
                                 <td className='p-2 border border-blue-400'>{user.name}</td>
                                 <td className='p-2 border border-blue-400'>{user.email}</td>
                                 <td className='p-2 border border-blue-400'>{user.city}</td>
+                                <td className='p-2 border border-blue-400'>
+                                    <button
+                                        className='bg-blue-500 rounded-full py-1 px-3 text-white'
+                                    >Edit</button>
+                                </td>
+                                <td className='p-2 border border-blue-400'>
+                                    <button onClick={() => deleteUser(user._id)}
+                                        className='bg-red-500 rounded-full py-1 px-3 text-white'
+                                    >Delete</button>
+                                </td>
                             </tr>
                         })
                     }
