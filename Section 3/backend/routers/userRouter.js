@@ -112,7 +112,6 @@ router.post('/authenticate', (req, res) => {
                     }
                 )
 
-
             } else {
                 res.status(401).json({ message: 'Invalid Credentials' });
             }
