@@ -1,6 +1,8 @@
 'use client';
+import axios from 'axios';
 import { useFormik } from 'formik';
 import React from 'react'
+import toast from 'react-hot-toast';
 
 const Login = () => {
 
@@ -12,7 +14,17 @@ const Login = () => {
     onSubmit: (values) => {
       console.log(values);
 
-      
+      axios.post('http://localhost:5000/user/authenticate', values)
+        .then((result) => {
+          toast.success('Login Success');
+          console.log(result.data);
+
+          localStorage.setItem('token', result.data.token);
+
+        }).catch((err) => {
+          toast.error('Login Failed');
+          console.log(err);
+        });
 
     }
   })

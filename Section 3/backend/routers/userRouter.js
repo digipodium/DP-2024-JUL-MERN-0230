@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Model = require('../models/userModel');
 const jwt = require('jsonwebtoken');
+const verifyToken = require('./verifyToken');
 require('dotenv').config();
 
 router.post('/add', (req, res) => {
@@ -23,7 +24,7 @@ router.post('/add', (req, res) => {
 });
 
 // getall
-router.get('/getall', (req, res) => {
+router.get('/getall', verifyToken, (req, res) => {
 
     Model.find()
         .then((result) => {
@@ -80,7 +81,7 @@ router.put('/update/:id', (req, res) => {
         });
 });
 
-router.delete('/delete/:id', (req, res) => {
+router.delete('/delete/:id',  (req, res) => {
     Model.findByIdAndDelete(req.params.id)
         .then((result) => {
             res.status(200).json(result);
@@ -102,7 +103,7 @@ router.post('/authenticate', (req, res) => {
                 jwt.sign(
                     payload,
                     process.env.JWT_SECRET,
-                    { expiresIn: 3600 },
+                    { expiresIn: 10 },
                     (err, token) => {
                         if (err) {
                             res.status(500).json({ message: 'Token Generation Failed' });
