@@ -18,14 +18,12 @@ const Login = () => {
         .then((result) => {
           toast.success('Login Success');
           console.log(result.data);
-
           localStorage.setItem('token', result.data.token);
 
         }).catch((err) => {
           toast.error('Login Failed');
           console.log(err);
         });
-
     }
   })
 

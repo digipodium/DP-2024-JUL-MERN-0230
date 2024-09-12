@@ -103,7 +103,7 @@ router.post('/authenticate', (req, res) => {
                 jwt.sign(
                     payload,
                     process.env.JWT_SECRET,
-                    { expiresIn: 10 },
+                    { expiresIn: 3600 },
                     (err, token) => {
                         if (err) {
                             res.status(500).json({ message: 'Token Generation Failed' });

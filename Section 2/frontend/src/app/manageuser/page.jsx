@@ -1,17 +1,34 @@
 'use client';
 import axios from 'axios'
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
+
+const token = localStorage.getItem('token') || '';
 
 const ManageUser = () => {
 
     const [userList, setUserList] = useState([]);
 
-    const fetchUsers = async () => {
-        const res = await axios.get('http://localhost:5000/user/getall');
-        console.table(res.data);
-        setUserList(res.data);
+    const router = useRouter();
+
+    const fetchUsers = () => {
+
+        if (!token) router.push('/login');
+
+        axios.get('http://localhost:5000/user/getall', {
+            headers: {
+                'x-auth-token': token
+            }
+        })
+            .then((res) => {
+                console.table(res.data);
+                setUserList(res.data);
+            }).catch((err) => {
+                console.log(err);
+                if (err.response.status === 403) router.push('/login');
+            });
     }
 
     useEffect(() => {
